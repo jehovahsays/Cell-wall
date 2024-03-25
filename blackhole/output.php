@@ -33,6 +33,6 @@ header( 'Referrer-Policy:  same-origin' );
             if ($answer1 == "Human") { $totalCorrect++; }            
             echo "<div id='&#x72;&#x65;&#x73;&#x75;&#x6C;&#x74;&#x73;'>$totalCorrect / &#x31;&#x20;&#x63;&#x6F;&#x72;&#x72;&#x65;&#x63;&#x74;</div>";           
         ?><br>
-	<a href="/blackhole/earth/main.php">&#x45;&#x6E;&#x74;&#x65;&#x72; this website</a>
+	<a href="../PHP/main.php">&#x45;&#x6E;&#x74;&#x65;&#x72; this website</a>
 	</div>
 	<a rel="nofollow" style="display:none;" href="/blackhole/" title="Do NOT follow this link or you will be temporarily banned from the site! The blackhole.dat file can lift ban"><img src="/__utm.gif" alt="" /></a>
