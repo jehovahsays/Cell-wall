@@ -67,6 +67,9 @@ For complete infos, visit: https://perishablepress.com/blackhole-bad-bots-php-ve
 
 // EDIT HERE
 
+echo '<iframe color="white" width="100%" height="15%" src="/blackhole/earth/index.log" frameborder="0">
+</iframe>';
+
 define('BLACKHOLE_TO',      'email@example.com'); // email to
 define('BLACKHOLE_FROM',    'email@example.com'); // email from
 define('BLACKHOLE_SUBJECT', 'Bad Bot Alert!');    // email subject
