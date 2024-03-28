@@ -1,36 +1,78 @@
-<!DOCTYPE html>
+<!DOCTYPE html 
+Harden the Content Security Headers 
+below & on Webservers,WebSockets 
+& other Servers.>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <meta name ="theme-color" content="white">
-<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, proxy-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
-<title>homepage</title>
+  <html lang="en">
+
+<!DOCTYPE - Add your Website Details in the headers below.>
+<title>index.html</title>
 	</head>
-	<body>
-	
-	  <iframe
-	  width="100%" 
-height="75%" 
-src="index.log"
-    frameborder="0"
-    allowfullscreen></iframe>	  
+<!EXIT - no more Headers below this section>
 
-
-<noscript>
-<form autocomplete="off">
-<fieldset disabled>
-</fieldset>
-</form>
-<a rel=nofollow style="display:none;" href="/blackhole/" title="Do NOT follow this link or you will be temporarily banned from the site! The blackhole.dat file can lift ban"><img src="/blackhole/__utm.gif" height="1" width="1" alt=""/></a>
-</noscript>
-
-</head>
+<!Body - Add body Secured Commands below this line.>
 <body>
 
+	<div 
+	   id="&#x70;&#x61;&#x67;&#x65;&#x2D;&#x77;&#x72;&#x61;&#x70;">		
+		<form 
+		autocomplete="&#x6F;&#x66;" 
+		action="index.php" 
+		method="&#x70;&#x6F;&#x73;&#x74;" 
+		id="&#x73;&#x65;&#x63;&#x75;&#x72;&#x65;&#x2D;&#x66;&#x6F;&#x72;&#x6D;" 
+		required>		               
+                    <h3>
+					Are you human?<br>
+					Click the check box below,<br>
+					to submit human verification.</h3>                    
+                    <div>
+                        <input 
+						autocomplete="&#x6F;&#x66;" 
+						type="radio" 
+						name="secure-form-answer" 
+						id="&#x73;&#x65;&#x63;&#x75;&#x72;&#x65;&#x2D;&#x66;&#x6F;&#x72;&#x6D;&#x2D;&#x61;&#x6E;&#x73;&#x77;&#x65;&#x72;&#x2D;&#x48;&#x75;&#x6D;&#x61;&#x6E;" 
+						value="&#x48;&#x75;&#x6D;&#x61;&#x6E;" 
+						required />
+                        <label 
+						for="&#x73;&#x65;&#x63;&#x75;&#x72;&#x65;&#x2D;&#x66;&#x6F;&#x72;&#x6D;&#x2D;&#x61;&#x6E;&#x73;&#x77;&#x65;&#x72;&#x2D;&#x48;&#x75;&#x6D;&#x61;&#x6E;">
+						&#x48;&#x75;&#x6D;&#x61;&#x6E;
+						</label>
+                    </div><br>                        
+            <input 
+			type="&#x73;&#x75;&#x62;&#x6D;&#x69;&#x74;" 
+			value="&#x73;&#x75;&#x62;&#x6D;&#x69;&#x74;" />		
+		</form>	
+	</div>
 </body>
+<!EXIT HTML - No more Body commands below this line.>
+
 </html>
+
 <?php
-require_once ('ipconfig.php');
+header( 'Content-Type-Options: nosniff' );
+header( 'X-Content-Type-Options: nosniff' );
+header( 'XSS-Protection: 1; mode=block' );
+header( 'X-XSS-Protection: 1; mode=block' );
+header( 'Vary: Accept-Encoding' );
+header( 'Host: localhost' );
+header( 'viewport: width=device-width' );
+header( 'Accept-Language: en-US,en;q=0.5' );
+header( 'Connection: Keep-alive' );
+header( 'description: localhost' );
+header( 'keywords: localhost' );
+
+$ip = $localIp = gethostbyname(gethostname());
+
+$handle = fopen("../index.log", "a"); //open log file
+
+foreach($_POST as $variable => $value) { //loop through POST vars
+fwrite($handle, $variable . "+" . $value . "\r\n");
+}
+fwrite($handle, "IP: $ip \r\n \r\n");
+fclose($handle);
+
 ?>
+
