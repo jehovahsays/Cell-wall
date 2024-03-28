@@ -8,7 +8,7 @@ below & on Webservers,WebSockets
   <html lang="en">
 
 <!DOCTYPE - Add your Website Details in the headers below.>
-<title>main.html</title>
+<title>Human.html</title>
 	</head>
 <!EXIT - no more Headers below this section>
 
@@ -61,7 +61,7 @@ color:white;">
 
 <div class="container">
   <span class="box">
-    <h2>C:\Users\Admin></h2>
+    <h2>C:\Users\Human></h2>
 <iframe color="green" width="100%" height="100%" src="/index.log" frameborder="0">
 </iframe>
 </span>
